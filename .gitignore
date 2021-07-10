@@ -1,8 +1,10 @@
-build/
+app/build/
+app/dist/
 *.js.map
 *.d.ts
 node_modules/
 .env
-client/node_modules/
-server/node_modules/
+app/client/node_modules/
+app/server/node_modules/
+app/client/.cache
 node_modules
