@@ -1,0 +1,8 @@
+build/
+*.js.map
+*.d.ts
+node_modules/
+.env
+client/node_modules/
+server/node_modules/
+node_modules
