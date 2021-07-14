@@ -25,13 +25,15 @@
     <link href="https://css.gg/chevron-down.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
+    <script type="text/javascript" src="./index.js"></script>
   </head>
 
   <body>
 
       <section class="center" id="submitbox">
         <h2>Answer:</h2>
-        <input type="text" id="answer" name="answer" placeholder="sheeeeeeeeeesh" required>
+        <input type="text" id="answer" name="answer" placeholder="sheeeeeeeeeesh" >
+        <button onclick="submitAnswer(answer.value)"> Submit </button>
 
       </section>
 
@@ -68,6 +70,5 @@
       <div>Made with &lt;3 by HexLabs</div>
     </footer>
 
-    <script src="./index.js"></script>
   </body>
 </html>

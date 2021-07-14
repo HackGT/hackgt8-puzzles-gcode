@@ -15,7 +15,14 @@ submitRoutes.route("/").post(async (req, res) => {
             JSON.stringify({
                 "uuid": req.body.uuid,
                 "puzzle_id": "makeitplace"
-            }))
+            }),
+            {
+                headers: {
+                    'Authorization': process.env.SECRET,
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
+        )
         .then((response) => {
             return res.send({success: true})
             })
