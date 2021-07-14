@@ -26,6 +26,8 @@ import { submitRoutes } from "./routes/submit"
 import { isAuthenticated } from "./auth/auth";
 import { authRoutes } from "./routes/auth";
 
+app.use("/auth", authRoutes);
+
 process.on("unhandledRejection", err => {
     throw err;
 });

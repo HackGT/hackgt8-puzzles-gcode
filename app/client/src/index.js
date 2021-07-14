@@ -12,11 +12,12 @@ for (const faq of faqs) {
 }
 
 
-function getLeaderboard() {
-
+function submitAnswer() {
+  axios.post(
+    "http://localhost:3000/submitEntry"
+  ).then((response) => {("leaderboard-text").innerHTML = response.text;})
+    .catch((error => {console.log(error);}))
 }
-
-
 
 
 
