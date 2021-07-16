@@ -19,3 +19,4 @@ If reconstructed properly, the hacker will see that the gcode prints a market st
 ## Potential Issues
 - The largest leap in logic is in equating column names of csv -> capital letters
 - Also another issue is the slicer program. I need to test if other slicers can show the phrase.
+
