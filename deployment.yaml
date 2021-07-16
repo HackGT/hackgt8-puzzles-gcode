@@ -11,8 +11,7 @@ secrets:
   - GROUND_TRUTH_ID
   - GROUND_TRUTH_URL
   - ADMIN_KEY_SECRET
-  - MONGO_URL
-
+  
 env:
   PORT: 3000
   PRODUCTION: true
