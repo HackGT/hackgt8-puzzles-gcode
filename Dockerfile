@@ -15,4 +15,4 @@ COPY --from=0 /usr/src/hackgt8-puzzles-gcode/server/ /usr/src/hackgt8-puzzles-gc
 COPY --from=0 /usr/src/hackgt8-puzzles-gcode/client/ /usr/src/hackgt8-puzzles-gcode/client/
 EXPOSE 3000
 WORKDIR /usr/src/hackgt8-puzzles-gcode/server
-CMD ["node", "build/index.ts"]
+CMD ["node", "build/index.js"]
