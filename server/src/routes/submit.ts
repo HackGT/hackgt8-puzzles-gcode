@@ -19,7 +19,7 @@ submitRoutes.route('/').post(async (req, res) => {
         console.log('answer correct!');
         await axios.post(puzzles_url.concat(`/submitEntry`), {
             uuid: user.uuid,
-            puzzle_id: "merchant"
+            puzzle_id: "makeitplace"
         }, {
             headers: {
                 Authorization: `Bearer ${process.env.ADMIN_KEY_SECRET}`
