@@ -1,0 +1,19 @@
+{
+  "name": "hackgt-puzzles-gcode",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "postinstall": "gulp postinstall",
+    "start": "gulp",
+    "install-dependencies": "gulp dependencies",
+    "serve": "node ./server/build/index.ts",
+    "build": "gulp build"
+  },
+    "dependencies": {
+      "gulp": "^4.0.2",
+      "gulp-install": "^1.1.0",
+      "gulp-shell": "^0.8.0",
+      "parcel-bundler": "^1.12.5"
+    }
+}
+

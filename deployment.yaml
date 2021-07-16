@@ -1,0 +1,19 @@
+git:
+  branch: master
+
+wants:
+  mongo: true
+
+secrets:
+  - SECRET
+  - ANSWER
+  - GROUND_TRUTH_SECRET
+  - GROUND_TRUTH_ID
+  - GROUND_TRUTH_URL
+  - ADMIN_KEY_SECRET
+  - MONGO_URL
+
+env:
+  PORT: 3000
+  PRODUCTION: true
+  MAIN_PUZZLES_URL: https://puzzles.hack.gt
