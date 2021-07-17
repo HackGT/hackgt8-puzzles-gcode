@@ -25,41 +25,54 @@
     <link href="https://css.gg/chevron-down.css" rel="stylesheet" />
     <link rel="icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
-  <script>
-    function submitAnswer(){
-    fetch(`http://localhost:3000/submit`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "*"
-        },
-        body: JSON.stringify({"answer": document.getElementById('answer').value})
-    }).then(res => {
-        res.json()
-            .then(data => {
-                if (data["success"]===true) {
-                    window.location.replace("https://puzzles.hack.gt");
-                }
-            });
-        }
-    ).catch(err => {
-        console.error(err);
-    })
-    
-}
-  </script>
-  </head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      </head>
 
-  <body>
+  <body style="background-image: url('assets/bg.png');">
 
       <section class="center" id="submitbox">
+        <h2><a style="color:white;" href="assets/MAKEITplace.tar.gz">Files</a></h2>
+
         <h2>Answer:</h2>
 
-        <form  action="/submit" method="post" >
+        
+        <div id="err"></div>
         <input type="text" id="answer" name="answer" placeholder="sheeeeeeeeeesh" >
-        <input type="submit" value="Submit"> 
-        </form>
-      </section>
+        <button id="submitbutt"> Submit</button>
+     <script>
+      document.getElementById("submitbutt").addEventListener("click", function() {
+               console.log(document.getElementById('answer').value); 
+               axios.post(
+                "/submit", 
+                JSON.stringify({
+                    "answer": document.getElementById('answer').value
+                }),
+                {
+                    headers: {
+                            'Content-Type': 'application/json',
+                            'Access-Control-Allow-Origin': '*'
+                    }
+                }
+                ).then((response) => {
+                        if(response.data['success']==true || 
+                            (
+                                response.data['success']==false && 
+                                response.data['error']==="You have already submitted a solution!"
+                        )){
+                            document.getElementById("answer").style.borderColor = "green";
+                            window.location.replace("https://puzzles.hack.gt");
+                        } else if (response.data['success']==false && 
+                               response.data['error']==="Answer is incorrect!") {
+                            document.getElementById("answer").style.borderColor = "red";
+                        }else {
+                                 console.log(response);}
+                })
+                .catch((error => {console.log(error);}))
+        });
+     </script>
+
+
+     </section>
 
     <footer class="pd-4">
       <div class="socials">
