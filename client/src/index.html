@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ඞ</title>
+    <title>ඞ MAKEITplace</title>
     <meta name="title" content="Puzzles submission page"/>
     <meta
       name="description"
@@ -35,15 +35,19 @@
         },
         body: JSON.stringify({"answer": document.getElementById('answer').value})
     }).then(res => {
-        return res;
-    }).catch(err => {
+        res.json()
+            .then(data => {
+                if (data["success"]===true) {
+                    window.location.replace("https://puzzles.hack.gt");
+                }
+            });
+        }
+    ).catch(err => {
         console.error(err);
     })
     
 }
   </script>
-
-
   </head>
 
   <body>

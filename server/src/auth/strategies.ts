@@ -110,10 +110,7 @@ export class GroundTruthStrategy extends OAuthStrategy {
 
         if (!user) {
             user = createNew<IUser>(User, {
-                ...profile,
-                points: 0,
-                puzzlesCompleted: [],
-                admin: false
+                ...profile
             });
         } else {
             user.token = accessToken;

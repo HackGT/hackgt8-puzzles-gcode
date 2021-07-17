@@ -67,16 +67,15 @@ process.on("unhandledRejection", err => {
     throw err;
 });
 
-app.use(isAuthenticated, express.static(path.join(__dirname, "../../client/build")));
 
 app.use("/submit", isAuthenticated, submitRoutes);
-//app.use(isAuthenticated, express.static(path.join(__dirname, "../../client/dist")));
-app.get("/submitpage", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../../client/dist", "index.html"))
-})
+app.use(isAuthenticated, express.static(path.join(__dirname, "../../client/dist")));
+//app.get("/", isAuthenticated, (req, res) => {
+//    res.sendFile(path.join(__dirname, "../../client/dist", "index.html"))
+//})
 
 app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../client/public/MAKEITplace.tar.gz"));
+    res.redirect("https://www.youtube.com/watch?v=lg5WKsVnEA4")
 });
 
 app.listen(PORT, () => {
