@@ -65,6 +65,7 @@
                             window.location.replace("https://puzzles.hack.gt");
                         } else if (response.data['success']==false && 
                                response.data['error']==="Answer is incorrect!") {
+                            alert("Sorry, wrong answer");
                             document.getElementById("answer").style.borderColor = "red";
                         }else {
                                  console.log(response);}
