@@ -46,9 +46,9 @@
                console.log(document.getElementById('answer').value); 
                axios.post(
                 "/submit", 
-                JSON.stringify({
+                {
                     "answer": document.getElementById('answer').value
-                }),
+                },
                 {
                     headers: {
                             'Content-Type': 'application/json',
